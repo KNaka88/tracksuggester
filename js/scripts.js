@@ -48,7 +48,7 @@ $(document).ready(function(){
               phpPoints += 2;
               break;
       case "database":
-              rubyPoints += 3;
+              cPoints += 3;
               javaPoints += 2;
               break;
       default:
@@ -56,9 +56,43 @@ $(document).ready(function(){
     };
   };
 
+  var trackSuggestion = function(){
+    convertCompanySizeToPoints(companySize);
+    convertSpecialityToPoints(speciality);
+
+    if(designPoints >= 5){
+      alert("Design Track might be suit for you")
+    }
+
+    if(cPoints >= 5){
+      alert("C# Track might be suit for you")
+    }
+
+    if(phpPoints >= 5){
+      alert("PHP Track might be suit for you")
+    }
+
+    if(javaPoints >= 5){
+      alert("Java Track might be suit for you")
+    }
+
+    if(rubyPoints >= 5){
+      alert("Ruby Track might be suit for you")
+    }
+
+
+
+    //For Debugging
+    console.log("designPoints" + designPoints);
+    console.log("cPoints" + cPoints);
+    console.log("phpPoints" + phpPoints);
+    console.log("rubyPoints" + rubyPoints);
+    console.log("javaPoints" + javaPoints);
+    //
+  }
+
 
   //Front Logic Goes Here
-
   // Title Button
   $("#title button").click(function(event){
     $("#question1").slideToggle();
@@ -105,6 +139,7 @@ $(document).ready(function(){
   $("#question6 button").click(function(event){
     phpPoints = parseInt($("input:radio[name=php-preference]:checked").val());
     $("#result").slideToggle();
+    trackSuggestion();
     event.preventDefault();
   });
 
