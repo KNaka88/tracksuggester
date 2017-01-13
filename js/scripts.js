@@ -69,24 +69,19 @@ $(document).ready(function(){
 
     //Show the track of Highest Score
     if(maxPoint === designPoints){
-      alert("Design");
       $(".track-name").append("We reccomend Design Track");
     };
     if(cPoints >= maxPoint){
-      alert("C#");
       $(".track-name").append("We reccomend Design Track");
     }
     if(maxPoint === phpPoints){
-      alert("PHP");
       $(".track-name").append("We reccomend PHP Track");
 
     };
     if(maxPoint === javaPoints){
-      alert("Java");
       $(".track-name").append("We reccomend Java Track");
     }
     if(maxPoint === rubyPoints){
-      alert("Ruby");
       $(".track-name").append("We reccomend Ruby Track");
     }
 
