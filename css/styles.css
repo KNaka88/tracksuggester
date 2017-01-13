@@ -1,13 +1,13 @@
 .panel-style{
   height:350px;
   width: 60%;
-  margin: 0 auto;
-  border: 2px solid red   /*for checking layout*/
+  margin: 3% auto;
 }
 
 .panel-style h3{
   text-align: center;
 }
+
 
 #question1 {
   display: none;

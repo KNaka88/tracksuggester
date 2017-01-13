@@ -70,6 +70,7 @@ $(document).ready(function(){
     //Show the track of Highest Score
     if(maxPoint === designPoints){
       $(".track-name").append("Design Track");
+
     };
     if(cPoints >= maxPoint){
       $(".track-name").append("C#/.NET Track");
