@@ -1,0 +1,37 @@
+.panel-style{
+  height:300px;
+  width: 50%;
+  margin: 0 auto;
+  border: 2px solid red   /*for checking layout*/
+}
+
+.panel-style h3{
+  text-align: center;
+}
+
+#question1 {
+  display: none;
+}
+
+#question2 {
+  display: none;
+}
+
+#question3 {
+  display: none;
+}
+
+#question4 {
+  display: none;
+}
+
+#question5 {
+  display: none;
+}
+
+#question6 {
+  display: none;
+}
+#result {
+  display: none;
+}
