@@ -61,24 +61,24 @@ $(document).ready(function(){
     convertSpecialityToPoints(speciality);
 
     if(designPoints >= 5){
-      alert("Design Track might be suit for you")
+      $(".track-name").text("We will reccomend Design Track");
     }
 
     if(cPoints >= 5){
-      alert("C# Track might be suit for you")
+      $(".track-name").text("We will reccomend C# Track");
     }
 
     if(phpPoints >= 5){
-      alert("PHP Track might be suit for you")
+      $(".track-name").text("We will reccomend PHP Track");
     }
 
     if(javaPoints >= 5){
-      alert("Java Track might be suit for you")
-    }
+      $(".track-name").text("We will reccomend Java Track");
+    };
 
     if(rubyPoints >= 5){
-      alert("Ruby Track might be suit for you")
-    }
+      $(".track-name").text("We will reccomend Ruby Track");
+    };
 
 
 
@@ -138,12 +138,14 @@ $(document).ready(function(){
   // Question6 Wordpress and PHP Preference
   $("#question6 button").click(function(event){
     phpPoints = parseInt($("input:radio[name=php-preference]:checked").val());
+
+    //Show Result
     $("#result").slideToggle();
     trackSuggestion();
+    $(".userName").text(userName);
+
     event.preventDefault();
   });
-
-
 
 
 
