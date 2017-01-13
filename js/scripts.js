@@ -24,9 +24,35 @@ $(document).ready(function(){
               javaPoints += 3;
               rubyPoints += 2;
               break;
-      default:
+      case "startup-company":
               rubyPoints += 3;
               javaPoints += 2;
+              phpPoints += 1;
+              break;
+      default:
+              alert("Unexpected Error has occured");
+    };
+  };
+
+  var convertSpecialityToPoints = function(speciality){
+    switch (speciality){
+      case "web-development":
+              phpPoints += 3;
+              rubyPoints += 2;
+              break;
+      case "android":
+              javaPoints += 5;
+              break;
+      case "web-interactive":
+              rubyPoints += 3;
+              phpPoints += 2;
+              break;
+      case "database":
+              rubyPoints += 3;
+              javaPoints += 2;
+              break;
+      default:
+              alert("Unexpected Error has occurred");
     };
   };
 
