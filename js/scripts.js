@@ -10,7 +10,7 @@ $(document).ready(function(){
   var javaPoints = 0; //add priority on Java
   var companySize; //add prioity based on company size;
   var speciality; //add priority based on speciality (web-dev, android, web-interactive, database)
-  var maxPoint =0; //record best track.
+  var maxPoint = 0; //record best track points
 
   var convertCompanySizeToPoints = function(companySize){
     switch (companySize){
@@ -60,42 +60,37 @@ $(document).ready(function(){
     convertCompanySizeToPoints(companySize);
     convertSpecialityToPoints(speciality);
 
-    if(designPoints >= 5){
-      $(".track-name").text("We will reccomend Design Track");
-      maxPoint = designPoints;
-    }
+    //Find Highest Score
+    maxPoint = designPoints;
+    if(cPoints >= maxPoint)   { maxPoint = cPoints; };
+    if(phpPoints >= maxPoint) { maxPoint = phpPoints; };
+    if(javaPoints >= maxPoint){ maxPoint = javaPoints; };
+    if(rubyPoints >= maxPoint){ maxPoint = rubyPoints; };
 
-    if(cPoints >= 5){
-      $(".track-name").text("We will reccomend C# Track");
-      if(maxPoint < cPoints){
-        maxPoint = cPoints;
-      };
-    }
-
-    if(phpPoints >= 5){
-      $(".track-name").text("We will reccomend PHP Track");
-      if(maxPoint < phpPoints){
-        maxPoint = phpPoints;
-      };
-    }
-
-    if(javaPoints >= 5){
-      $(".track-name").text("We will reccomend Java Track");
-      if(maxPoint < javaPoints){
-        maxPoint = javaPoints;
-      };
+    //Show the track of Highest Score
+    if(maxPoint === designPoints){
+      alert("Design");
+      $(".track-name").append("We reccomend Design Track");
     };
+    if(cPoints >= maxPoint){
+      alert("C#");
+      $(".track-name").append("We reccomend Design Track");
+    }
+    if(maxPoint === phpPoints){
+      alert("PHP");
+      $(".track-name").append("We reccomend PHP Track");
 
-    if(rubyPoints >= 5){
-      $(".track-name").text("We will reccomend Ruby Track");
-      if(maxPoint < rubyPoints){
-        maxPoint = rubyPoints;
-      };
     };
+    if(maxPoint === javaPoints){
+      alert("Java");
+      $(".track-name").append("We reccomend Java Track");
+    }
+    if(maxPoint === rubyPoints){
+      alert("Ruby");
+      $(".track-name").append("We reccomend Ruby Track");
+    }
 
-    alert(maxPoint);
-
-    //For Debugging
+    //For Debugging purpose
     console.log("designPoints" + designPoints);
     console.log("cPoints" + cPoints);
     console.log("phpPoints" + phpPoints);
@@ -103,6 +98,7 @@ $(document).ready(function(){
     console.log("javaPoints" + javaPoints);
     //
   };
+
 
 
   //Front Logic Goes Here
