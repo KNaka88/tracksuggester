@@ -109,6 +109,7 @@ $(document).ready(function(){
     userName = $("input#user-name").val();
     userEmail = $("input#user-email").val();
     $("#question2").slideToggle();
+    $("#title button").hide();
     event.preventDefault();
   });
 
@@ -116,6 +117,7 @@ $(document).ready(function(){
   $("#question2 button").click(function(event){
     designPoints = parseInt($("input:radio[name=design-preference]:checked").val());
     $("#question3").slideToggle();
+    $("#question1 button").hide();
     event.preventDefault();
   });
 
@@ -123,6 +125,7 @@ $(document).ready(function(){
   $("#question3 button").click(function(event){
     cPoints = parseInt($("input:radio[name=c-preference]:checked").val());
     $("#question4").slideToggle();
+    $("#question2 button").hide();
     event.preventDefault();
   });
 
@@ -130,6 +133,7 @@ $(document).ready(function(){
   $("#question4 button").click(function(event){
     companySize = $("input:radio[name=company-size]:checked").val();
     $("#question5").slideToggle();
+    $("#question3 button").hide();
     event.preventDefault();
   });
 
@@ -137,15 +141,17 @@ $(document).ready(function(){
   $("#question5 button").click(function(event){
     speciality = $("input:radio[name=speciality]:checked").val();
     $("#question6").slideToggle();
+    $("#question4 button").hide();
     event.preventDefault();
   });
 
   // Question6 Wordpress and PHP Preference
   $("#question6 button").click(function(event){
     phpPoints = parseInt($("input:radio[name=php-preference]:checked").val());
-
     //Show Result
     $("#result").slideToggle();
+    $("#question5 button").hide();
+    $("#question6 button").hide();
     trackSuggestion();
     $(".userName").text(userName);
 
