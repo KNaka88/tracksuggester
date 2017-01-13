@@ -69,20 +69,20 @@ $(document).ready(function(){
 
     //Show the track of Highest Score
     if(maxPoint === designPoints){
-      $(".track-name").append("We reccomend Design Track");
+      $(".track-name").append("Design Track");
     };
     if(cPoints >= maxPoint){
-      $(".track-name").append("We reccomend Design Track");
+      $(".track-name").append("C#/.NET Track");
     }
     if(maxPoint === phpPoints){
-      $(".track-name").append("We reccomend PHP Track");
+      $(".track-name").append("PHP/Drupal Track");
 
     };
     if(maxPoint === javaPoints){
-      $(".track-name").append("We reccomend Java Track");
+      $(".track-name").append("Java/Android Track");
     }
     if(maxPoint === rubyPoints){
-      $(".track-name").append("We reccomend Ruby Track");
+      $(".track-name").append("Ruby/Rails Track");
     }
 
     //For Debugging purpose

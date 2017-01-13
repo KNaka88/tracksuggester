@@ -1,6 +1,6 @@
 .panel-style{
-  height:300px;
-  width: 50%;
+  height:350px;
+  width: 60%;
   margin: 0 auto;
   border: 2px solid red   /*for checking layout*/
 }
