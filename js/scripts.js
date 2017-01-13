@@ -10,7 +10,7 @@ $(document).ready(function(){
   var javaPoints = 0; //add priority on Java
   var companySize; //add prioity based on company size;
   var speciality; //add priority based on speciality (web-dev, android, web-interactive, database)
-
+  var maxPoint =0; //record best track.
 
   var convertCompanySizeToPoints = function(companySize){
     switch (companySize){
@@ -62,25 +62,38 @@ $(document).ready(function(){
 
     if(designPoints >= 5){
       $(".track-name").text("We will reccomend Design Track");
+      maxPoint = designPoints;
     }
 
     if(cPoints >= 5){
       $(".track-name").text("We will reccomend C# Track");
+      if(maxPoint < cPoints){
+        maxPoint = cPoints;
+      };
     }
 
     if(phpPoints >= 5){
       $(".track-name").text("We will reccomend PHP Track");
+      if(maxPoint < phpPoints){
+        maxPoint = phpPoints;
+      };
     }
 
     if(javaPoints >= 5){
       $(".track-name").text("We will reccomend Java Track");
+      if(maxPoint < javaPoints){
+        maxPoint = javaPoints;
+      };
     };
 
     if(rubyPoints >= 5){
       $(".track-name").text("We will reccomend Ruby Track");
+      if(maxPoint < rubyPoints){
+        maxPoint = rubyPoints;
+      };
     };
 
-
+    alert(maxPoint);
 
     //For Debugging
     console.log("designPoints" + designPoints);
@@ -89,7 +102,7 @@ $(document).ready(function(){
     console.log("rubyPoints" + rubyPoints);
     console.log("javaPoints" + javaPoints);
     //
-  }
+  };
 
 
   //Front Logic Goes Here
