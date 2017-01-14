@@ -14,13 +14,26 @@
 }
 
 #title div p {
+  margin-top: 50px;
   text-align: center;
+
+}
+
+button {
+  margin-top: 10px;
+}
+
+#title button  {
+  margin-top: 150px;
+}
+
+#question6 button {
+  margin-top: 117px;
 }
 
 .panel-body{
   height: 235px;
 }
-
 
 #result h4 {
   margin-top: 5px;
