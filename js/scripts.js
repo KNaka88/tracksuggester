@@ -105,7 +105,7 @@ $(document).ready(function(){
   });
 
   // Question1 Ask name and email
-  $("#question1 button").click(function(event){
+  $("form#form1").submit(function(event){
     userName = $("input#user-name").val();
     userEmail = $("input#user-email").val();
     $("#question2").slideToggle();
@@ -114,15 +114,15 @@ $(document).ready(function(){
   });
 
   // Question2 Design Preference
-  $("#question2 button").click(function(event){
-    designPoints = parseInt($("input:radio[name=design-preference]:checked").val());
+  $("form#form2").submit(function(event){
+    //designPoints = parseInt($("input:radio[name=design-preference]:checked").val());
     $("#question3").slideToggle();
     $("#question1 button").hide();
     event.preventDefault();
   });
 
   // Question3 Ask passion to Microsoft (C#)
-  $("#question3 button").click(function(event){
+  $("form#form3").click(function(event){
     cPoints = parseInt($("input:radio[name=c-preference]:checked").val());
     $("#question4").slideToggle();
     $("#question2 button").hide();
