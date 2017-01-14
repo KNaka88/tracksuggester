@@ -57,43 +57,17 @@ $(document).ready(function(){
   };
 
   var trackSuggestion = function(){
-    convertCompanySizeToPoints(companySize);
-    convertSpecialityToPoints(speciality);
-
     //Find Highest Score
     maxPoint = designPoints;
     if(cPoints >= maxPoint)   { maxPoint = cPoints; };
     if(phpPoints >= maxPoint) { maxPoint = phpPoints; };
     if(javaPoints >= maxPoint){ maxPoint = javaPoints; };
     if(rubyPoints >= maxPoint){ maxPoint = rubyPoints; };
-
-    //Show the track of Highest Score
-    if(maxPoint === designPoints){
-      $(".track-name").append("Design Track");
-
-    };
-    if(cPoints >= maxPoint){
-      $(".track-name").append("C#/.NET Track");
-    }
-    if(maxPoint === phpPoints){
-      $(".track-name").append("PHP/Drupal Track");
-
-    };
-    if(maxPoint === javaPoints){
-      $(".track-name").append("Java/Android Track");
-    }
-    if(maxPoint === rubyPoints){
-      $(".track-name").append("Ruby/Rails Track");
-    }
-
-    //For Debugging purpose
-    console.log("designPoints" + designPoints);
-    console.log("cPoints" + cPoints);
-    console.log("phpPoints" + phpPoints);
-    console.log("rubyPoints" + rubyPoints);
-    console.log("javaPoints" + javaPoints);
-    //
   };
+
+
+
+
 
 
 
@@ -152,7 +126,27 @@ $(document).ready(function(){
     $("#result").slideToggle();
     $("#question5 button").hide();
     $("#question6 button").hide();
+    convertCompanySizeToPoints(companySize);
+    convertSpecialityToPoints(speciality);
     trackSuggestion();
+
+    //Show the track of Highest Score
+    if(maxPoint === designPoints){
+      $(".track-name").append("Design Track");
+    };
+    if(cPoints >= maxPoint){
+      $(".track-name").append("C#/.NET Track");
+    }
+    if(maxPoint === phpPoints){
+      $(".track-name").append("PHP/Drupal Track");
+
+    };
+    if(maxPoint === javaPoints){
+      $(".track-name").append("Java/Android Track");
+    }
+    if(maxPoint === rubyPoints){
+      $(".track-name").append("Ruby/Rails Track");
+    }
     $(".userName").text(userName);
 
     event.preventDefault();
