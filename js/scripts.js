@@ -114,7 +114,7 @@ $(document).ready(function(){
   });
 
   // Question2 Design Preference
-  $("form#form2").submit(function(event){
+  $("#question2 button").click(function(event){
     //designPoints = parseInt($("input:radio[name=design-preference]:checked").val());
     $("#question3").slideToggle();
     $("#question1 button").hide();
@@ -122,7 +122,7 @@ $(document).ready(function(){
   });
 
   // Question3 Ask passion to Microsoft (C#)
-  $("form#form3").click(function(event){
+  $("#question3 button").click(function(event){
     cPoints = parseInt($("input:radio[name=c-preference]:checked").val());
     $("#question4").slideToggle();
     $("#question2 button").hide();
